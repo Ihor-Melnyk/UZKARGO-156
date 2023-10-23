@@ -199,7 +199,9 @@ function onSearchBranch(searchRequest) {
 
 //Скрипт 4. Зміна властивостей атрибутів
 function EnterInformationTask() {
-  var stateTask = EdocsApi.getCaseTaskDataByCode("EnterInformation").state;
+  var stateTask = EdocsApi.getCaseTaskDataByCode(
+    "EnterInformation" + EdocsApi.getAttributeValue("Sections").value
+  ).state;
   if (
     stateTask == "assigned" ||
     stateTask == "inProgress" ||
